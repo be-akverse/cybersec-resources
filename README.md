@@ -5,7 +5,7 @@ A collection of free cybersecurity tools and learning resources for aspiring sec
 ## AI Usage
 AI was used in this project only to fix bugs and gather recources!
 
-## What's Inside
+## Inside the Website
 
 - **Blue Team** — SIEMs, forensics, malware analysis, threat intel, endpoint defense
 - **Red Team** —  pentesting platforms, exploitation frameworks, web app hacking, wireless attacks, reverse engineering
