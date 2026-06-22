@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersec Recources</title>
+</head>
+<style>
+    :root {
+        background-color: #FFD2A1;
+    }
+
+h1 {
+  position: relative;
+  display: inline-block;
+}
+
+h1::before,
+h1::after {
+  content: '✦';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #fbbf24;
+  opacity: 0.8;
+}
+
+h1::before {
+  left: -3rem; 
+}
+
+h1::after {
+  right: -3rem; 
+}
+    @font-face {
+  font-family: 'Climate Crisis';
+  src: url('fonts/ClimateCrisis1979.otf') format('opentype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gloock';
+  src: url('fonts/Gloock-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+/* Define your font */
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  src: url('fonts/BricolageGrotesque-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-display: swap;
+}
+
+a {
+  font-family: 'Bricolage Grotesque', 'Inter', 'Segoe UI', sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #126edd;           
+  text-decoration: none;     
+  position: relative;        
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+a:hover {
+  color: #126edd;         
+  transform: translateX(4px); 
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #4a83c4;
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
+}
+a:visited {
+  color: #51389b;          
+}
+
+
+a:focus-visible {
+  outline: 2px solid #6935b7;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+h1 {
+    color: rgb(61, 56, 56);
+  font-family: 'Climate Crisis', sans-serif;
+  font-size: 4rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+h3 {
+  font-family: 'Gloock', serif;
+  font-weight: bold;
+  font-size: 2rem;
+  color:rgb(18, 15, 15)
+}
+small {
+    color: rgb(0, 134, 223);
+  font-family: 'Climate Crisis', sans-serif;
+  font-size: 2rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  position: relative;
+}
+
+.title-block {
+  text-align: center;
+}
+
+.tagline {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 1rem;
+  color: #64748b;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-top: 0.75rem;
+}
+
+.divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #60a5fa, transparent);
+  margin: 1.5rem auto 0;
+}
+.stars-left,
+.stars-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #fbbf24;
+  font-size: 1.2rem;
+  opacity: 0.6;
+}
+
+.stars-left span:nth-child(2),
+.stars-right span:nth-child(2) {
+  margin-left: 1rem; 
+  font-size: 0.9rem;
+  color: #fcd34d;
+}
+.submit-resource {
+    max-width: 600px;
+    margin: 4rem auto 3rem;
+    padding: 0 2rem;
+}
+
+.submit-resource h3 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 2.2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    color: rgb(61, 56, 56);
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 2.5px solid rgb(61, 56, 56);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.35);
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: rgb(61, 56, 56);
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #126edd;
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 0 4px rgba(18, 110, 221, 0.15);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(61, 56, 56, 0.45);
+    font-weight: bold;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.form-group select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='rgb(61,56,56)' viewBox='0 0 16 16'%3E%3Cpath d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+}
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: rgb(61, 56, 56);
+    color: #FFD2A1;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+    margin-top: 2rem;
+}
+
+button[type="submit"]:hover {
+    background-color: #126edd;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(18, 110, 221, 0.25);
+}
+
+button[type="submit"]:active {
+    transform: translateY(-1px);
+}
+.success-message {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #059669;
+    text-align: center;
+    margin-top: 1rem;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.success-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+#rd {
+  color: #c81d1d;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+</style>
+<header class="site-header">
+  <div class="stars-left">
+    <span>✦</span><span>✧</span><span>✦</span>
+  </div>
+  
+  <div class="title-block">
+    <h1>CyberSec Resources</h1>
+    <div class="divider"></div>
+  </div>
+  
+  <div class="stars-right">
+    <span>✦</span><span>✧</span><span>✦</span>
+  </div>
+</header>
+<body>
+    
+    <body>
+    
+    <small>For Blue Team</small>
+    <br>
+    <br>
+    
+    <h3><details><summary>Safety Operations and Monitoring</summary></details></h3>
+    <ul id="list-safety-ops">
+        <li><a href="https://securityonionsolutions.com" target="_blank">Security Union (Free Linux distro for IDS, NSM, and log management)</a></li>
+        <li><a href="https://wazuh.com" target="_blank">Open-source SIEM and XDR platform</a></li>
+        <li><a href="http://www.splunk.com/" target="_blank">Splunk (SIEM for log analysis (500MB/day))</a></li>
+        <li><a href="https://www.elastic.co/security" target="_blank">Elastic Security (Free SIEM and threat detection)</a></li>
+        <li><a href="http://graylog.org" target="_blank">Graylorg (Open-source log management)</a></li>
+        <li><a href="http://www.cybersecurity.att.com" target="_blank">AlientVault OSSIM (Open Source SIEM)</a></li>
+        <li><a href="http://www.snort.org" target="_blank">Snort (Open Source IDS/IPS)</a></li>
+        <li><a href="http://www.suricata.io" target="_blank">Suricata (Free IDS/IPS and NSM engine)</a></li>
+        <li><a href="https://www.zeek.org" target="_blank">Zeek (Network analysis and security monitoring)</a></li>
+        <li><a href="http://ossec.net" target="_blank">OSSEC (Host-based intrusion detection)</a></li>
+    </ul>
+    <br>
+
+    <h3><details><summary>Digital Forensics and Incident Response</summary></details></h3>
+    <ul id="list-forensics">
+        <li><a href="http://www.autopsy.com" target="_blank">Autposy (Free Digital Forensics platform)</a></li>
+        <li><a href="http://www.sans.org/tools/" target="_blank">SANS SIFT (Free forensic investigation toolkit VM)</a></li>
+        <li><a href="https://docs.velociraptor.app/" target="_blank">Velociraptor (Free endpoint monitoring and forensics)</a></li>
+        <li><a href="http://www.kroll.com" target="_blank">KAPE (Free Triage and collection tool)</a></li>
+        <li><a href="http://www.volatilityfoundation.org" target="_blank">Volatility (Free memory forensics framework)</a></li>
+        <li><a href="https://fireeye.com" target="_blank">FireEye (Free endpoint investigation by FireEye)</a></li>
+        <li><a href="http://www.accessdata.com" target="_blank">FTK Imager (Free disk imaging tool)</a></li>
+        <li><a href="http://www.cyberdefenders.org" target="_blank">CyberDefenders (Blue Team and Digital Forensics lab)</a></li>
+        <li><a href="https://www.letsdefend.io" target="_blank">LetsDefend (Blue Team training platform)</a></li>
+        <li><a href="https://www.socprime.com" target="_blank">SOC Prime (Free threat detection content)</a></li>
+    </ul>
+    <br>
+
+    <h3><details><summary>Malware Analysis and Reverse Engineering</summary></details></h3>
+    <ul id="list-malware">
+        <li><a href="https://virustotal.com" target="_blank">VirusTotal (Free malware scanning and analysis)</a></li>
+        <li><a href="https://www.any.run" target="_blank">Any.Run (Interactive malware sandbox)</a></li>
+        <li><a href="https://hybrid-analysis.com" target="_blank">Hybrid Analysis (Free automated malware analysis)</a></li>
+        <li><a href="https://www.joesandbox.com" target="_blank">Joe Sandbox (Free malware analysis)</a></li>
+        <li><a href="https://bazaar.abuse.ch" target="_blank">Malware Bazaar (Free malware sample sharing)</a></li>
+        <li><a href="https://www.remnux.org" target="_blank">REMnux (Free linux toolkit for malware analysis)</a></li>
+        <li><a href="https://cuckoosandbox.org" target="_blank">Cuckoo Sandbox (Free automated malware analysis system)</a></li>
+        <li><a href="https://virustotal.github.io/yara" target="_blank">YARA (Free pattren matching for malware)</a></li>
+        <li><a href="https://winitor.com" target="_blank">PEStudio (Free static malware analysis)</a></li>
+        <li><a href="https://docs.microsoft.com/sysinternals" target="_blank">Procmon and Procexp (Free microsoft sysinternals tools)</a></li>
+    </ul>
+    <br>
+
+    <h3><details><summary>Threat Intelligence and OSINT</summary></details></h3>
+    <ul id="list-osint">
+        <li><a href="https://misp-project.org" target="_blank">MISP (Free threat intelligence software)</a></li>
+        <li><a href="https://otx.alienvault.com/" target="_blank">OTX Alien Vault (Free threat intelligence community)</a></li>
+        <li><a href="https://virustotal.com" target="_blank">VirasTotal Intelligence (Free IOC lookups)</a></li>
+        <li><a href="https://www.abuse.ch" target="_blank">Abuse.ch (Free threat intel (Malware bazaar, URLhaus etc.))</a></li>
+        <li><a href="https://shodan.io" target="_blank">Shodan (Free search engine for internet devices (limited))</a></li>
+        <li><a href="https://www.censys.io" target="_blank">Censys (Free internet asset discovery)</a></li>
+        <li><a href="https://greynoise.io" target="_blank">GreyNoise (Free internet noise and scan data)</a></li>
+        <li><a href="https://urlhaus.abuse.ch" target="_blank">URLhaus (Free malicious URL database)</a></li>
+        <li><a href="https://threatminer.org" target="_blank">ThreatMiner (Free threat intelligence search)</a></li>
+        <li><a href="https://pulsedive.com" target="_blank">PulseDive (Free threat intelligence platform)</a></li>
+    </ul>
+    <br>
+
+    <h3><details><summary>Endpoint and System Defence</summary></details></h3>
+    <ul id="list-endpt">
+        <li><a href="https://microsoft.com" target="_blank">Microsoft Defender for Endpoint (Free trial/ Built in EDR)</a></li>
+        <li><a href="https://www.crowdstrike.com" target="_blank">Crowd Strike Falcon Free (Free tier EDR)</a></li>
+        <li><a href="https://sophos.com" target="_blank">Sophos Intercept X (Free home edition)</a></li>
+        <li><a href="https://www.clamav.net" target="_blank">ClamAV (Free open source antivirus)</a></li>
+        <li><a href="https://comodo.com" target="_blank">Comodo Free EDR (Free endpoint detection)</a></li>
+        <li><a href="https://docs.microsoft.com/sysinternals/" target="_blank">Sysmon (Free microsoft system monitoring)</a></li>
+        <li><a href="https://github.com/Neo23x0/Loki" target="_blank">Loki (Free IOC Scanner)</a></li>
+        <li><a href="https://chkrootkit.org" target="_blank">Chkrootkit (Free rootkit detector)</a></li>
+        <li><a href="https://rkhunter.sourceforge.net" target="_blank">Rkhunter (Free rootkit hunter)</a></li>
+        <li><a href="https://osquery.io" target="_blank">OSQurey (Free Endpoint Visibility tool)</a></li>
+    </ul>
+    <br>
+   <div id="rd"><p><a href="index_2.html" style=" color: #dc2626;">RED TEAM RECOURCES</a></p></div>
+
+    <section class="submit-resource">
+        <h3>Submit a Resource</h3>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="resource-link">Link</label>
+                <input type="url" id="resource-link" name="link" placeholder="https://example.com" required>
+            </div>
+            <div class="form-group">
+                <label for="resource-name">Resource Name</label>
+                <input type="text" id="resource-name" name="name" placeholder="Name of the tool or site" required>
+            </div>
+            <div class="form-group">
+                <label for="resource-desc">Description</label>
+                <textarea id="resource-desc" name="description" rows="3" placeholder="A few words describing what it does..." required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="resource-category">Category</label>
+                <select id="resource-category" name="category" required>
+                    <option value="" disabled selected>Select a category</option>
+                    <option value="safety-ops">Safety Operations and Monitoring</option>
+                    <option value="forensics">Digital Forensics and Incident Response</option>
+                    <option value="malware">Malware Analysis and Reverse Engineering</option>
+                    <option value="osint">Threat Intelligence and OSINT</option>
+                    <option value="endpt">Endpoint and System Defence</option>
+                </select>
+            </div>
+            <button type="submit">Add Resource</button>
+            <p id="success-msg" class="success-message">✓ Resource submitted successfully!</p>
+        </form>
+    </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const categoryMap = {
+        'safety-ops': 'list-safety-ops',
+        'forensics': 'list-forensics',
+        'malware': 'list-malware',
+        'osint': 'list-osint',
+        'endpt': 'list-endpt'
+    };
+
+    const saved = JSON.parse(localStorage.getItem('cybersec-resources') || '[]');
+    saved.forEach(res => {
+        if (categoryMap[res.category]) {
+            addResourceToDOM(res, categoryMap[res.category]);
+        }
+    });
+
+    const form = document.querySelector('.submit-resource form');
+    const successMsg = document.getElementById('success-msg');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const link = document.getElementById('resource-link').value.trim();
+        const name = document.getElementById('resource-name').value.trim();
+        const desc = document.getElementById('resource-desc').value.trim();
+        const category = document.getElementById('resource-category').value;
+
+        if (!link || !name || !desc || !category) return;
+
+        const resource = {
+            link: link,
+            name: name,
+            description: desc,
+            category: category,
+            id: Date.now().toString()
+        };
+
+        const current = JSON.parse(localStorage.getItem('cybersec-resources') || '[]');
+        current.push(resource);
+        localStorage.setItem('cybersec-resources', JSON.stringify(current));
+
+        addResourceToDOM(resource, categoryMap[category]);
+
+        form.reset();
+
+        successMsg.classList.add('show');
+        setTimeout(function() {
+            successMsg.classList.remove('show');
+        }, 3000);
+    });
+
+    function addResourceToDOM(resource, listId) {
+        const ul = document.getElementById(listId);
+        if (!ul) return;
+
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = resource.link;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.textContent = resource.name + ' (' + resource.description + ')';
+
+        li.appendChild(a);
+        ul.appendChild(li);
+    }
+});
+</script>
+
+</body>
+</html>

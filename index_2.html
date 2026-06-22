@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersec Recources</title>
+</head>
+<style>
+    :root {
+        background-color: #FFD2A1;
+    }
+
+h1 {
+  position: relative;
+  display: inline-block;
+}
+
+h1::before,
+h1::after {
+  content: '✦';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #fbbf24;
+  opacity: 0.8;
+}
+
+h1::before {
+  left: -3rem; 
+}
+
+h1::after {
+  right: -3rem; 
+}
+    @font-face {
+  font-family: 'Climate Crisis';
+  src: url('fonts/ClimateCrisis1979.otf') format('opentype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gloock';
+  src: url('fonts/Gloock-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+/* Define your font */
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  src: url('fonts/BricolageGrotesque-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-display: swap;
+}
+
+a {
+  font-family: 'Bricolage Grotesque', 'Inter', 'Segoe UI', sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #dc2626;           
+  text-decoration: none;     
+  position: relative;        
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+a:hover {
+  color: #dc2626;         
+  transform: translateX(4px); 
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #dc2626;
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
+}
+a:visited {
+  color: #51389b;          
+}
+
+
+a:focus-visible {
+  outline: 2px solid #6935b7;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+h1 {
+    color: rgb(61, 56, 56);
+  font-family: 'Climate Crisis', sans-serif;
+  font-size: 4rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+h3 {
+  font-family: 'Gloock', serif;
+  font-weight: bold;
+  font-size: 2rem;
+  color:rgb(18, 15, 15)
+}
+small {
+    color: #dc2626;
+  font-family: 'Climate Crisis', sans-serif;
+  font-size: 2rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  position: relative;
+}
+
+.title-block {
+  text-align: center;
+}
+
+.tagline {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 1rem;
+  color: #64748b;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-top: 0.75rem;
+}
+
+.divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #dc2626, transparent);
+  margin: 1.5rem auto 0;
+}
+.stars-left,
+.stars-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #fbbf24;
+  font-size: 1.2rem;
+  opacity: 0.6;
+}
+
+.stars-left span:nth-child(2),
+.stars-right span:nth-child(2) {
+  margin-left: 1rem; 
+  font-size: 0.9rem;
+  color: #fcd34d;
+}
+.submit-resource {
+    max-width: 600px;
+    margin: 4rem auto 3rem;
+    padding: 0 2rem;
+}
+
+.submit-resource h3 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 2.2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    color: rgb(61, 56, 56);
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 2.5px solid rgb(61, 56, 56);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.35);
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: rgb(61, 56, 56);
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #dc2626;
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 0 4px rgba(18, 110, 221, 0.15);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(61, 56, 56, 0.45);
+    font-weight: bold;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.form-group select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='rgb(61,56,56)' viewBox='0 0 16 16'%3E%3Cpath d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+}
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: rgb(61, 56, 56);
+    color: #FFD2A1;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+    margin-top: 2rem;
+}
+
+button[type="submit"]:hover {
+    background-color: #dc2626;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(18, 110, 221, 0.25);
+}
+
+button[type="submit"]:active {
+    transform: translateY(-1px);
+}
+.success-message {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #059669;
+    text-align: center;
+    margin-top: 1rem;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.success-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+#bt {
+  color: #126edd;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+</style>
+<header class="site-header">
+  <div class="stars-left">
+    <span>✦</span><span>✧</span><span>✦</span>
+  </div>
+  
+  <div class="title-block">
+    <h1>CyberSec Resources</h1>
+    <div class="divider"></div>
+  </div>
+  
+  <div class="stars-right">
+    <span>✦</span><span>✧</span><span>✦</span>
+  </div>
+</header>
+<body>
+    
+    <body>
+    
+    <small>For Red Team</small>
+    <br>
+    <br>
+    
+    <h3><details><summary>Penetration Testing Platforms</summary></details></h3>
+    <ul id="list-pentst">
+        <li><a href="https://kali.org" target="_blank">Kali Linux (Free penetration testing OS)</a></li>
+        <li><a href="https://parrotsec.org" target="_blank">Parrot Security OS (Free pentesting and froensics OS)</a></li>
+        <li><a href="http://www.hackthebox.com" target="_blank">Hack The Box (Free pentesting labs)</a></li>
+        <li><a href="https://www.tryhackme.com" target="_blank">TryHackMe (Guided pentesting practise)</a></li>
+        <li><a href="http://vulnhub.com" target="_blank">VulnHub (Free vulnerable VMs)</a></li>
+        <li><a href="http://www.pentesterlab.com" target="_blank">PentesterLab (Free web pentesting exercises)</a></li>
+        <li><a href="http://www.offensive-security.com" target="_blank">Proving Grounds (Free pentesting practise (Offensive Security))</a></li>
+        <li><a href="https://pwntilldawn.com/" target="_blank">PwntillDawn (Free online pentesting labs)</a></li>
+        <li><a href="https://ctf.hackthebox.com" target="_blank">HackTheBox CTF (Free CTF competitions)</a></li>
+        <li><a href="http://overthewire.org" target="_blank">OverTheWire (Security wargames via SSH)</a></li>
+    </ul>
+    <br>
+
+    <h3><details><summary>Exploitation Frameworks and Tools</summary></details></h3>
+    <ul id="list-frmwrk">
+        <li><a href="http://www.metasploit.com" target="_blank">MetaSploit Framework (Free exploitation framework)</a></li>
+        <li><a href="http://portswigger.net/burp/communitydownload" target="_blank">Burp Suit Community (Free web vulnerability scanner)</a></li>
+        <li><a href="https://nmap.org" target="_blank">Nmap (Free network scanner)</a></li>
+        <li><a href="http://cirt.net/nikto" target="_blank">Nikto (Free web vulnerability scanner)</a></li>
+        <li><a href="http://sqlmap.org" target="_blank">SQLMap (Free SQL Injection automation)</a></li>
+        <li><a href="https://github.com/OJ/gobuster" target="_blank">Gobuster (Free Directory/File brute forcer)</a></li>
+        <li><a href="http://github.com/vanhauser-thc/thc-hydra" target="_blank">Hydra (Free password brute forcer)</a></li>
+        <li><a href="http://openwall.com/jhon" target="_blank">Jhon the Ripper (Free password cracker)</a></li>
+        <li><a href="https://hashcat.net" target="_blank">Hashcat (Free GPU password cracker)</a></li>
+        <li><a href="https://github.com/fortra/impacket" target="_blank">Impacket (Free python network protocols)</a></li>
+    </ul>
+    <br>
+
+    <h3><details><summary>Web Application Hacking</summary></details></h3>
+    <ul id="list-web">
+        <li><a href="https://zaproxy.org" target="_blank">OWASP ZAP (Free web app vulnerability scanner)</a></li>
+        <li><a href="https://portswigger.net" target="_blank">BurpSuite Community (Free web proxy and scanner)</a></li>
+        <li><a href="https://dvwa.co.uk" target="_blank">DVWA (Damn Vulnerable Web App (practise))</a></li>
+        <li><a href="https://owasp.org/www-project-webgoat" target="_blank">WebGoat (OWASP insecure web app)</a></li>
+        <li><a href="https://owasp-juice.shop" target="_blank">Juice Shop (Modren Vulnerable web pp)</a></li>
+        <li><a href="https://itsecgames.com" target="_blank">bWAPP (Buggy web application)</a></li>
+        <li><a href="https://sourceforge.net/projects/mutillidae" target="_blank">Mutillidae (Deliberately vulnerable web app)</a></li>
+        <li><a href="https://hacker101.com" target="_blank">Hacker101 (Free web hacking course)</a></li>
+        <li><a href="https://portswigger.net/web-security" target="_blank">PortSwigger Web Security Acadmey (Free web security training)</a></li>
+        <li><a href="https://hackthissite.org" target="_blank">HackThisSite (Web security challenges)</a></li>
+    </ul>
+    <br>
+
+    <h3><details><summary>Wireless and Network Attacks</summary></details></h3>
+    <ul id="list-ntwrk">
+        <li><a href="https://aircrack-ng.org" target="_blank">Aircrack-ng (Free wifi security auditing)</a></li>
+        <li><a href="https://hak5.org/" target="_blank">Wifi Pineapple(Free wifi auditing tools)</a></li>
+        <li><a href="https://github.com/derv82/wifite" target="_blank">Wifite (Free automated wireless auditor)</a></li>
+        <li><a href="https://github.com/t6x/reaver-wps-fork-t6x" target="_blank">Reaver (Free WPS brute forcer)</a></li>
+        <li><a href="https://wireshark.org" target="_blank">WireShark (Free network protocol analyzer)</a></li>
+        <li><a href="https://bettercap.org" target="_blank">Bettercap (Free network attack framework)</a></li>
+        <li><a href="https://www.ettercap-project.org/" target="_blank">Ettercap (Free man-in-the-middle tool)</a></li>
+        <li><a href="https://github.com/lgandx/Responder" target="_blank">Responder (Free LLM NR/NBT-NS poisoner)</a></li>
+        <li><a href="https://github.com/gentilkiwi/mimikatz" target="_blank">Mimikatz (Free credential extraction)</a></li>
+        <li><a href="https://github.com/BloodHoundAD/BloodHound" target="_blank">BloodHound (Free Active Dierectory attack path analysis)</a></li>
+    </ul>
+    <br>
+
+   <h3><details><summary>Exploitation Development and Reverse Engineering</summary></details></h3>
+    <ul id="list-explt">
+        <li><a href="https://ghidra-sre.org" target="_blank">Ghidra (Free NSA reverse engineering tool)</a></li>
+        <li><a href="https://hex-rays.com/ida-free" target="_blank">IDA Free (Free disassembler)</a></li>
+        <li><a href="https://x64dbg.com" target="_blank">x64dbg (Free windows debugger)</a></li>
+        <li><a href="https://immunityinc.com" target="_blank">Immunity Debugger (Free exploit development debugger)</a></li>
+        <li><a href="https://docs.pwntools.com" target="_blank">pwntools (Free CTF/exploit development framework)</a></li>
+        <li><a href="https://github.com/JonathanSalwan/ROPgadget" target="_blank">ROPgadget (Free ROP chain finder)</a></li>
+        <li><a href="https://github.com/ReFirmLabs/binwalk" target="_blank">Binwalk (Free firmware analysis)</a></li>
+        <li><a href="https://rada.re" target="_blank">Radare2 (Free reverse engineering framework)</a></li>
+        <li><a href="https://cutter.re" target="_blank">Cutter (Free GUI for radare2)</a></li>
+        <li><a href="https://angr.io" target="_blank">Angr (Free Binary analysis framework)</a></li>
+    </ul>
+    <br>
+   <div id="bt"><p><a href="index.html" style=" color: #126edd;">BLUE TEAM RECOURCES</a></p></div>
+
+    <section class="submit-resource">
+        <h3>Submit a Resource</h3>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="resource-link">Link</label>
+                <input type="url" id="resource-link" name="link" placeholder="https://example.com" required>
+            </div>
+            <div class="form-group">
+                <label for="resource-name">Resource Name</label>
+                <input type="text" id="resource-name" name="name" placeholder="Name of the tool or site" required>
+            </div>
+            <div class="form-group">
+                <label for="resource-desc">Description</label>
+                <textarea id="resource-desc" name="description" rows="3" placeholder="A few words describing what it does..." required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="resource-category">Category</label>
+                <select id="resource-category" name="category" required>
+                    <option value="" disabled selected>Select a category</option>
+                    <option value="pentst">Penetration Testing Platforms</option>
+                    <option value="frmwrk">Exploitation Frameworks and Tools</option>
+                    <option value="web">Web Application Hacking</option>
+                    <option value="ntwrk">Wireless and Network Attacks</option>
+                    <option value="explt">Exploitation Development and Reverse Engineering</option>
+                </select>
+            </div>
+            <button type="submit">Add Resource</button>
+            <p id="success-msg" class="success-message">✓ Resource submitted successfully!</p>
+        </form>
+    </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const categoryMap = {
+        'pentst': 'list-pentst',
+        'frmwrk': 'list-frmwrk',
+        'web': 'list-web',
+        'ntwrk': 'list-ntwrk',
+        'explt': 'list-explt'
+    };
+
+    const saved = JSON.parse(localStorage.getItem('cybersec-resources') || '[]');
+    saved.forEach(res => {
+        if (categoryMap[res.category]) {
+            addResourceToDOM(res, categoryMap[res.category]);
+        }
+    });
+
+    const form = document.querySelector('.submit-resource form');
+    const successMsg = document.getElementById('success-msg');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const link = document.getElementById('resource-link').value.trim();
+        const name = document.getElementById('resource-name').value.trim();
+        const desc = document.getElementById('resource-desc').value.trim();
+        const category = document.getElementById('resource-category').value;
+
+        if (!link || !name || !desc || !category) return;
+
+        const resource = {
+            link: link,
+            name: name,
+            description: desc,
+            category: category,
+            id: Date.now().toString()
+        };
+
+        const current = JSON.parse(localStorage.getItem('cybersec-resources') || '[]');
+        current.push(resource);
+        localStorage.setItem('cybersec-resources', JSON.stringify(current));
+
+        addResourceToDOM(resource, categoryMap[category]);
+
+        form.reset();
+
+        successMsg.classList.add('show');
+        setTimeout(function() {
+            successMsg.classList.remove('show');
+        }, 3000);
+    });
+
+    function addResourceToDOM(resource, listId) {
+        const ul = document.getElementById(listId);
+        if (!ul) return;
+
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = resource.link;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.textContent = resource.name + ' (' + resource.description + ')';
+
+        li.appendChild(a);
+        ul.appendChild(li);
+    }
+});
+</script>
+
+</body>
+</html>
